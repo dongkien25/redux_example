@@ -17,15 +17,16 @@ class Calculator extends Component<Props, State> {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.increment()} style={{ width: 30, height: 30, border: "1px solid gray" }}>
+        <button onClick={() => this.props.increment()} style={{ width: 30, height: 20, border: "1px solid gray" }}>
           +
         </button>
         <input
+          readOnly
           type="text"
           value={this.props.value}
           style={{ width: 80, border: "1px solid gray" }}
         />
-        <button onClick={() => this.props.decrement()}style={{ width: 30, height: 30, border: "1px solid gray" }}>
+        <button onClick={() => this.props.decrement()}style={{ width: 30, height: 20, border: "1px solid gray" }}>
           -
         </button>
       </div>

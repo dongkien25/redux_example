@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Calculator from "./components/Calculator";
-import Testing from "./components/Testing";
+import  GetData  from "./components/GetData";
 function App() {
-  const [number, setNumber] = useState(0);
   return (
-    <div className="App" onClick={() => setNumber((pre) => ++pre)}>
+    <div className="App" >
       <Calculator></Calculator>
-      <Testing number={number} />
+      <br />
+      <GetData></GetData>
     </div>
   );
 }
