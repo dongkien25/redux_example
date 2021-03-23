@@ -1,15 +1,15 @@
 interface State {
   value: number;
 }
-const initialState: State = { value: 0 };
-export default (state = initialState, action: any) => {
+
+const calculatorReducer = (state = 0, action: any) => {
   switch (action.type) {
     case "add":
-      return { ...state, value: state.value + 1 };
+      return state + action.payload;
     case "minus":
-      return { ...state, value: state.value - 1 };
+      return state - action.payload;
     default:
       return state;
   }
 };
-export const result = (state: State) => state.value;
+export default calculatorReducer;

@@ -3,10 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Store from "./app/store";
+import { createStore, compose } from "redux";
+import allReducer from "./reducers";
 import { Provider } from "react-redux";
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
-const store = Store;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(allReducer, composeEnhancers && composeEnhancers());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

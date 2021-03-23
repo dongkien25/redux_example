@@ -1,8 +1,6 @@
-import {combineReducers} from 'redux'
-import calc from './calculator'
-import appData from './dataReducer'
+import { combineReducers } from "redux";
+import calc from "./calculator";
 const rootReducer = combineReducers({
-    appData,
-    calc,
+  calc,
 });
 export default rootReducer;
